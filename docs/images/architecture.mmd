@@ -1,0 +1,33 @@
+flowchart TD
+    UI[Browser chat UI] -->|POST /api/chat| API[FastAPI]
+    API <--> History[In-memory session history]
+    API --> Assistant[TravelAssistant orchestrator]
+    Assistant --> Retrieval[Semantic retrieval on every request]
+    Assistant --> Router[Keyword and regex tool routing]
+
+    subgraph RAG[Knowledge and retrieval]
+        Files[Three local Markdown summaries] --> Split[700-character chunks / 120 overlap]
+        Split --> Embeddings[Gemini document embeddings]
+        Embeddings --> Chroma[(Chroma vector store)]
+        Retrieval --> Query[Gemini query embedding]
+        Query --> Chroma
+        Chroma --> Context[Top five chunks and source metadata]
+    end
+
+    subgraph MCP[On-demand local MCP servers]
+        Router --> Client[Python MCP client over stdio]
+        Client --> Weather[Weather MCP server]
+        Client --> Currency[Currency MCP server]
+        Weather <--> OpenMeteo[Open-Meteo API]
+        Currency <--> Frankfurter[Frankfurter API]
+        Weather --> Results[Tool results or failure details]
+        Currency --> Results
+    end
+
+    Context --> Prompt[LangChain prompt]
+    Results --> Prompt
+    History -->|Last eight messages| Prompt
+    Assistant -->|Current question| Prompt
+    Prompt --> Gemini[Gemini answer generation]
+    Gemini --> Response[Answer with source links and MCP status]
+    Response --> UI

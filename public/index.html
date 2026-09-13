@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Travel Planning Assistant</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header>
+        <div class="header-brand">
+          <p class="eyebrow">SINGAPORE</p>
+          <img class="brand-logo" src="/assets/images/nagarro-logo.svg" alt="Nagarro" width="266" height="42" />
+        </div>
+        <h1>AI Travel Planning Assistant</h1>
+        <p class="subtitle">Grounded destination guidance with live weather and currency tools.</p>
+      </header>
+      <section id="messages" class="messages" aria-live="polite">
+        <article class="message assistant"><p>Ask about Singapore, current weather, currency conversion, or a weather-aware itinerary.</p></article>
+      </section>
+      <section class="suggestions" aria-label="Suggested questions">
+        <button>What are the must-visit attractions in Singapore?</button>
+        <button>Convert INR 50,000 to SGD.</button>
+        <button>Plan a three-day Singapore itinerary for next week and adjust it for the weather forecast.</button>
+      </section>
+      <form id="chat-form">
+        <label class="sr-only" for="message">Your travel question</label>
+        <textarea id="message" rows="3" maxlength="2000" placeholder="Ask about your Singapore trip…" required></textarea>
+        <button id="send" type="submit">Send</button>
+      </form>
+    </main>
+    <template id="message-template"><article class="message"><div class="content"></div><div class="details"></div></article></template>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
