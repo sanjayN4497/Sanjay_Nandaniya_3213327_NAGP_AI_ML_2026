@@ -92,13 +92,24 @@ The server retains up to **16 messages** per session, while the prompt receives 
 
 ### Prerequisites
 
+- Git.
 - Python **3.11 or later** and `pip`.
 - A Gemini API key with access to the configured chat and embedding models.
 - Internet connectivity for Gemini, Open-Meteo, and Frankfurter.
 
-Run commands from the project root.
+### 1. Clone the repository branch
 
-### 1. Create and activate a virtual environment
+Clone the `master` branch and enter the project directory:
+
+```bash
+git clone https://github.com/sanjayN4497/Sanjay_Nandaniya_3213327_NAGP_AI_ML_2026.git
+
+cd Sanjay_Nandaniya_3213327_NAGP_AI_ML_2026
+```
+
+Run all remaining commands from this project directory.
+
+### 2. Create and activate a virtual environment
 
 Windows PowerShell:
 
@@ -116,7 +127,7 @@ source .venv/bin/activate
 
 If PowerShell blocks activation, use `.\.venv\Scripts\python.exe` instead of `python` in subsequent commands.
 
-### 2. Install dependencies
+### 3. Install dependencies
 
 ```bash
 python -m pip install -r requirements.txt
@@ -124,7 +135,7 @@ python -m pip install -r requirements.txt
 
 The project uses FastAPI, Uvicorn, LangChain, Gemini integration, Chroma, the MCP SDK, HTTPX, and python-dotenv. The browser UI uses plain HTML, CSS, and JavaScript; no frontend build step is required.
 
-### 3. Configure environment variables
+### 4. Configure environment variables
 
 If `.env` does not already exist, copy the template:
 
@@ -150,7 +161,7 @@ PORT=3000
 
 The application loads the project-local `.env` with precedence over matching shell variables. `.env` and generated `data/` files are excluded by `.gitignore`.
 
-### 4. Start the application
+### 5. Start the application
 
 ```bash
 python -m uvicorn app.main:app --reload --port 3000
@@ -158,7 +169,7 @@ python -m uvicorn app.main:app --reload --port 3000
 
 Open [http://localhost:3000](http://localhost:3000). The first question takes longer while embeddings and the vector store initialize. MCP servers start automatically when requested. Stop the application with `Ctrl+C`.
 
-### 5. Verify the setup
+### 6. Verify the setup
 
 Open [the health endpoint](http://localhost:3000/api/health). `{"geminiConfigured": true}` indicates that a key is present; it does not validate the key, model access, or connectivity. Interactive API documentation is at [http://localhost:3000/docs](http://localhost:3000/docs).
 
