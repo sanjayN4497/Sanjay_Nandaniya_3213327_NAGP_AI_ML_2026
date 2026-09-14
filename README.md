@@ -26,13 +26,16 @@ Retrieval and required tool calls run concurrently. For each tool call, the appl
 
 ## Knowledge-base sources
 
-The knowledge base contains three original study summaries attributed to three pages from two publishers. The application reads local Markdown files; it does not crawl or refresh the websites at runtime.
+The knowledge base contains four original study summaries covering all four recommended resources: Wikivoyage Singapore, Visit Singapore essential travel information, sample itineraries (using the seven-day itinerary), and things to do. The application reads local Markdown files; it does not crawl or refresh the websites at runtime.
 
 | Local document | Attributed source | Coverage |
 | --- | --- | --- |
 | [01-wikivoyage-singapore.md](knowledge/01-wikivoyage-singapore.md) | [Singapore travel guide - Wikivoyage](https://en.wikivoyage.org/wiki/Singapore) | Districts, attractions, food, transport, and itinerary ideas |
 | [02-visit-singapore-essentials.md](knowledge/02-visit-singapore-essentials.md) | [Essential Singapore Travel Information - Visit Singapore](https://www.visitsingapore.com/travel-tips/essential-travel-information/) | Climate, language, visitor essentials, transport, and accessibility |
 | [03-visit-singapore-itinerary.md](knowledge/03-visit-singapore-itinerary.md) | [Enjoy Singapore in 7 Days - Visit Singapore](https://www.visitsingapore.com/travel-tips/travelling-to-singapore/itineraries/7-days-in-singapore/) | Itinerary building blocks, rain alternatives, family activities, and food planning |
+| [04-visit-singapore-things-to-do.md](knowledge/04-visit-singapore-things-to-do.md) | [Things To Do & Must-Visit Places in Singapore - Visit Singapore](https://www.visitsingapore.com/things-to-do/top-things-to-do/) | Visitor-interest categories, cultural neighbourhoods, nature, wildlife, and evening activities |
+
+The Things to Do document also uses the official homepage's activity categories and neighbourhood highlights, recorded in `supporting_url`. It contains an original factual summary and labelled planning suggestions, with a link to the publisher's reuse terms in its metadata.
 
 Each document has front matter containing `title`, `url`, and `license_note`. The loader adds `filename`; chunking preserves this metadata. The application deduplicates source URLs from retrieved chunks and displays them below the answer. These links identify retrieved sources; they are not independent verification of every generated claim.
 
