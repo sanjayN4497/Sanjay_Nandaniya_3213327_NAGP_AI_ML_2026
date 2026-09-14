@@ -4,7 +4,7 @@ A Singapore travel assistant that combines a local knowledge base, retrieval-aug
 
 ## Demo Video
 
-**Video link:** c:\NAGP\Home Assignment - Technology Band III\Sanjay_Nandaniya_3213327_NAGP_2026_AI_ML.mp4
+**Video link:** <video controls src="Sanjay_Nandaniya_3213327_NAGP_2026_AI_ML.mp4" title="Title"></video>
 
 ## Architecture
 
