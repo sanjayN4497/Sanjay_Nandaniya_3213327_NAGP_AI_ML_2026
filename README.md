@@ -4,7 +4,7 @@ A Singapore travel assistant that combines a local knowledge base, retrieval-aug
 
 ## Demo Video
 
-[Demo Video](https://nagarro-my.sharepoint.com/:v:/p/sanjay_nandaniya/IQAqvmKZQITzRKDvhl_viFSyAeh5LoN0-qTG4AOj3RGQqnE?e=eXuHW0)
+[Demo Video](https://nagarro-my.sharepoint.com/:v:/p/sanjay_nandaniya/IQAqvmKZQITzRKDvhl_viFSyAeh5LoN0-qTG4AOj3RGQqnE?e=m0Z8Z6)
 
 ## Architecture
 
